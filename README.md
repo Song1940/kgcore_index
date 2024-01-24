@@ -15,11 +15,26 @@ This is the implementation of kg-core index, which is described in the following
 - Input parameters
   - Path of the hypergraph data
   - Index type
- 
+-Then '.pkl' of indexing tree file automatically saved in your working directory  
 Example code for the index construction is below
 ```
 python index_construction.py --file_path scr/network.hyp --type naive
 # naive.pkl file will be stored in your working directory within few seconds(minutes)
 ```
 
-### Query
+### Query processing
+- With the indexing tree you just builts, you can query to achieve (k,g)-core of the hypergraph
+- Input parameters
+  - Path for the indexing tree(path of .pkl file)
+  - Index type
+  - k
+  - g
+- This will return
+  - the size of core(number of nodes in the core you queried)
+  - every each node
+
+Example code for the index construction is below
+```
+python query_processing.py --file_path scr/naive.pkl --type naive --k 5 --g 5
+
+```
